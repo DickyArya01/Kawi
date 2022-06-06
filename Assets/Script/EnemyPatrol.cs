@@ -12,10 +12,7 @@ public class EnemyPatrol : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
-    private Transform groundCheck;
-
-    [SerializeField]
-    private LayerMask groundLayer;
+    private LayerMask flipLayer;
 
     [SerializeField]
     private Collider2D body;
@@ -37,17 +34,9 @@ public class EnemyPatrol : MonoBehaviour
         }        
     }
 
-    void FixedUpdate()
-    {
-        if(mustPatrol)
-        {
-            mustFlip = !Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-        }
-    }
-
     void Patrol()
     {
-        if(mustFlip || body.IsTouchingLayers(groundLayer))
+        if(body.IsTouchingLayers(flipLayer))
         {
             Flip();
         }

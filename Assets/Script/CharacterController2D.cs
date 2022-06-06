@@ -21,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
 	private Vector3 m_Velocity = Vector3.zero;
 
 	private bool tanah;
+	private float isMoving;
 
 	[Header("Events")]
 	[Space]
@@ -68,6 +69,16 @@ public class CharacterController2D : MonoBehaviour
 		} else {
 			anim.SetBool("Lompat", false);
 		} 
+
+		if (isMoving > 0 && tanah == true)
+		{
+			anim.SetBool("Lari", true);		
+		} else if (isMoving < 0 && tanah == true)
+		{
+			anim.SetBool("Lari", true);
+		} else {
+			anim.SetBool("Lari", false);
+		}
 	}
 
 
@@ -120,6 +131,7 @@ public class CharacterController2D : MonoBehaviour
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
+			isMoving = move;
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
 			{
