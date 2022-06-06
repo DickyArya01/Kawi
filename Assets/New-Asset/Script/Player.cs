@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    // public bool Button_kiri, Button_kanan, Button_lompat; //Variabel untuk Button
     Text info_Heart; // Variabel Heart
     Text info_Dewandaru; // Variabel untuk Koin
-    // Text info_Amo; // Variabel untuk Amo
     public int kecepatan; //kecepatan gerak
     // 
     public int kekuatanlompat; //variabel kekuatan lompat
@@ -26,7 +24,6 @@ public class Player : MonoBehaviour
 
     public int Heart; // Variabel nyawa Player
     public int Dewandaru; //Variabel Koin
-    // public int Amo; //Variabel Amo
 
     // // Start is called before the first frame update
     // //Animasi
@@ -42,10 +39,8 @@ public class Player : MonoBehaviour
         lompat=GetComponent<Rigidbody2D>(); //inisialisasi awal untuk lompat
         anim=GetComponent<Animator>(); //Inisialisasi Componen Animasi
         pplay=transform.position; //start sebagai object transform posisi
-        //play_again2
         info_Heart = GameObject.Find("UI_Heart").GetComponent<Text>(); // Pendefinisian UI Heart sebagai componen Text
         info_Dewandaru = GameObject.Find("UI_Poin").GetComponent<Text>(); // Pendefinisian UI Coin sebagai componen Text
-        // info_Amo = GameObject.Find("UI_Amo").GetComponent<Text>(); // Pendefinisian UI Amo sebagai Componen Text
     }
 
     // Update is called once per frame
@@ -101,19 +96,6 @@ public class Player : MonoBehaviour
             pindah=-1;
             anim.SetBool("Lari", true); //aimasi lari
         }
-        // else if(tanah==true && Input.GetKey(KeyCode.Mouse1)) //Mouse0 = klik kiri Mouse1=Klik Kanan
-        // {
-        //     if(pindah==1)
-        //     {
-        //         transform.Translate(Vector2.right * kecepatan * Time.deltaTime);
-        //     }
-        //     else if(pindah==-1)
-        //     {
-        //         transform.Translate(Vector2.right * -kecepatan * Time.deltaTime);
-        //     }
-            
-        //     anim.SetBool("Sliding", true);
-        // }
         else
         {
             anim.SetBool("Lari", false); //Tidak Berlari
@@ -123,7 +105,7 @@ public class Player : MonoBehaviour
 
 
     //     //lompat dengan klik mouse kiri
-        if(tanah==true && Input.GetKey(KeyCode.Mouse0)) //Mouse0 = klik kiri Mouse1=Klik Kanan
+        if(tanah==true && Input.GetKey(KeyCode.W)) //Mouse0 = klik kiri Mouse1=Klik Kanan
         {
             lompat.AddForce(new Vector2(0,kekuatanlompat));
         }
@@ -154,33 +136,5 @@ public class Player : MonoBehaviour
             transform.localScale = Player;
         }
 
-    // //Fungsi Button kiri
-    // public void Tekan_kiri()
-    // {
-    //     Button_kiri = true; //Ketika di Tekan
-    // }
-    // public void Lepas_kiri()
-    // {
-    //     Button_kiri = false; //Ketika dilepas
-    // }
-
-    // //fungsi Button Kanan
-    // public void Tekan_kanan()
-    // {
-    //     Button_kanan=true;
-    // }
-    // public void Lepas_kanan()
-    // {
-    //     Button_kanan=false;
-    // }
-
-    // //fungsi Button Lompat
-    // public void Tekan_lompat()
-    // {
-    //     Button_lompat=true;
-    // }
-    // public void Lepas_lompat()
-    // {
-    //     Button_lompat=false;
     }
 }
