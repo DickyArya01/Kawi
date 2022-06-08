@@ -30,4 +30,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(SceneIndex);
     }
+
+    public void moveToCurrentLevel()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("levelAt") + 1);
+    }
 }

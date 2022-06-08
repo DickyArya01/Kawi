@@ -17,12 +17,21 @@ public class player: MonoBehaviour
 
 	[SerializeField] private int level;
 
+	private SceneSwitcher sw;
+
 	float horizontalMove = 0f;
 	bool jump = false;
 	bool crouch = false;
 
+	void Start()
+	{
+		sw = new SceneSwitcher();
+	}
+
 	void Update()
 	{
+
+		resetProgress();
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -59,11 +68,30 @@ public class player: MonoBehaviour
 		{
 			Destroy(other.gameObject);
 			countDwd++;
+		}else if (other.gameObject.CompareTag("ClearLevel"))
+		{
+			saveProgress();
+            StartCoroutine(waitBeforeMoveScene());
 		}
 	}
 
 	private void saveProgress()
 	{
 		PlayerPrefs.SetInt("levelAt", 1);
+	}
+
+	private void resetProgress()
+	{
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+            PlayerPrefs.SetInt("levelAt", 0);
+
+		}
+	}
+
+	IEnumerator waitBeforeMoveScene()
+	{
+		sw.moveToCurrentLevel();
+		yield return new WaitForSeconds(3);
 	}
 }
