@@ -10,6 +10,8 @@ public class player: MonoBehaviour
 	[SerializeField] private Animator anim;
 
 	[SerializeField] private int countDwd;
+
+	[SerializeField] private string allDwd;
 	
 	[SerializeField] private float runSpeed;
 
@@ -49,7 +51,7 @@ public class player: MonoBehaviour
 			crouch = false;
 		}
 
-		count.text = countDwd.ToString();
+		count.text = countDwd.ToString() + " " + allDwd  ; 
 
 		level = PlayerPrefs.GetInt("levelAt");
 
@@ -68,6 +70,7 @@ public class player: MonoBehaviour
 		{
 			Destroy(other.gameObject);
 			countDwd++;
+
 		}else if (other.gameObject.CompareTag("ClearLevel"))
 		{
 			saveProgress();

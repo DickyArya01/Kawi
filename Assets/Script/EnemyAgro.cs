@@ -15,9 +15,12 @@ public class EnemyAgro : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    Animator anim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();    
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -27,9 +30,11 @@ public class EnemyAgro : MonoBehaviour
         if(distant < agroRange)
         {
             ChasePlayer();
+            anim.SetBool("jalan", true);
         }else
         {
             StopChasing();
+            anim.SetBool("jalan", false);
         }
 
         Debug.Log(distant);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5603415531296984212}
   - component: {fileID: 5603415531296984213}
   - component: {fileID: 5603415531296984210}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dewandaruPrefab
   m_TagString: Dewandaru
   m_Icon: {fileID: 0}

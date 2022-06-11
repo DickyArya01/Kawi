@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{44E85188-1619-E8E5-40B8-FE6346B41EAB}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{1BDF2127-3DEB-55E5-57E9-CAF36A7A7DE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Animation.Triangle.Runtime", "Unity.2D.Animation.Triangle.Runtime.csproj", "{C2BEB252-9704-C4E8-33E9-15EBFF1BE817}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{44E85188-1619-E8E5-40B8-FE6346B41EAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.csproj", "{371BD0B9-7869-7949-4C59-DA40BF0D302A}"
 EndProject
@@ -67,6 +67,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1BDF2127-3DEB-55E5-57E9-CAF36A7A7DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1BDF2127-3DEB-55E5-57E9-CAF36A7A7DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BDF2127-3DEB-55E5-57E9-CAF36A7A7DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,10 +79,6 @@ Global
 		{C2BEB252-9704-C4E8-33E9-15EBFF1BE817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2BEB252-9704-C4E8-33E9-15EBFF1BE817}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2BEB252-9704-C4E8-33E9-15EBFF1BE817}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44E85188-1619-E8E5-40B8-FE6346B41EAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{371BD0B9-7869-7949-4C59-DA40BF0D302A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{371BD0B9-7869-7949-4C59-DA40BF0D302A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{371BD0B9-7869-7949-4C59-DA40BF0D302A}.Release|Any CPU.ActiveCfg = Release|Any CPU
